@@ -7,10 +7,31 @@
 //    }
 
     if (isset($_POST['submit'])){
-        echo htmlspecialchars($_POST['email']);
-        echo htmlspecialchars($_POST['title']);
-        echo htmlspecialchars($_POST['ingredients']);
-    }
+//        echo htmlspecialchars($_POST['email']);
+//        echo htmlspecialchars($_POST['title']);
+//        echo htmlspecialchars($_POST['ingredients']);
+
+//        check email
+        if (empty($_POST['email'])){
+            echo "Email is required <br/>";
+        }else{
+            echo htmlspecialchars($_POST['email']);
+        }
+
+        //        check title
+        if (empty($_POST['title'])){
+            echo "Title is required <br/>";
+        }else{
+            echo htmlspecialchars($_POST['title']);
+        }
+
+        //        check ingredients
+        if (empty($_POST['ingredients'])){
+            echo "At least one ingredient is required <br/>";
+        }else{
+            echo htmlspecialchars($_POST['ingredients']);
+        }
+    } // end of the basic POST check. If the want to check whether html form inputs are empty, we can use "required" attribute in them
 
 ?>
 
@@ -23,7 +44,7 @@
     <h4 class="center">Add a Pizza</h4>
     <form action="add.php" method="POST" class="white">
         <label for="">Your Email</label>               <!--  we must put id in for-->
-        <input type="email" name="email">
+        <input type="email" name="email" required>
         <label for="">Pizza Title</label>
         <input type="text" name="title">
         <label for="">Ingredients (comma separated):</label>
