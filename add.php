@@ -1,15 +1,15 @@
 <?php
 
 //    if (isset($_GET['submit'])){
-//        echo $_GET['email'];
-//        echo $_GET['title'];
-//        echo $_GET['ingredients'];
+//        echo htmlspecialchars($_GET['email']);
+//        echo htmlspecialchars($_GET['title']);
+//        echo htmlspecialchars($_GET['ingredients']);
 //    }
 
     if (isset($_POST['submit'])){
-        echo $_POST['email'];
-        echo $_POST['title'];
-        echo $_POST['ingredients'];
+        echo htmlspecialchars($_POST['email']);
+        echo htmlspecialchars($_POST['title']);
+        echo htmlspecialchars($_POST['ingredients']);
     }
 
 ?>
