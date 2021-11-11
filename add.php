@@ -41,8 +41,14 @@ $errors = ['email'=>'', 'title'=>'', 'ingredients'=>''];
             }
         }
 
-
+        if(array_filter($errors)){
+            //echo "There are errors in the form";
+        } else {
+            //echo "Form is valid";
+            header('location: index.php');
         }
+
+    }
 
     function value($value, $name){
         global $errors;
