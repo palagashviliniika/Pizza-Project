@@ -54,7 +54,8 @@ $errors = ['email'=>'', 'title'=>'', 'ingredients'=>''];
         global $errors;
         if (empty($errors[$name])){
             echo htmlspecialchars($value);
-        } else {echo '';}
+        } else {echo '';
+        }
 
     } // end of the basic POST check. If the want to check whether html form inputs are empty, we can use "required" attribute in them
 
