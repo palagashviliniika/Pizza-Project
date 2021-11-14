@@ -1,14 +1,6 @@
 <?php
 
-//connecting to the database
-
-$conn = mysqli_connect('localhost','nika','nika-125','ninja_pizza');
-
-//checking connection
-
-if (!$conn){
-    echo "Connection Error ". mysqli_connect_error();  // it checks the current state and error-reason to the database connection
-}
+include 'config/db_connect.php';
 
 // write querry for all pizzas
 $sql = 'SELECT title, ingredients, id FROM pizzas ORDER BY created_at';
@@ -62,11 +54,11 @@ mysqli_close($conn);
 
         <?php endforeach; ?>
 
-        <?php if (count($pizzas) >= 2) : ?>
-            <p>There are 2 or more pizzas</p>
-        <?php  else : ?>
-            <p>There are less than 2 pizzas</p>
-        <?php endif; ?>
+<!--        --><?php //if (count($pizzas) >= 2) : ?>
+<!--            <p>There are 2 or more pizzas</p>-->
+<!--        --><?php // else : ?>
+<!--            <p>There are less than 2 pizzas</p>-->
+<!--        --><?php //endif; ?>
 
     </div>
 </div>
