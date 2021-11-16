@@ -8,7 +8,7 @@ if ($_SERVER['QUERY_STRING'] == 'noname' ){
     session_unset(); // it unsets all variables
 }
 
-$name = $_SESSION['name'];
+$name = $_SESSION['name']  ?? "Guest"; // its called null coalescing and it will choose one of the options
 
 ?>
 
