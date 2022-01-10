@@ -47,6 +47,8 @@ $email = $ingredients = $title = '';
     $validation = new validator($_POST);
     $errors = $validation->validateForm();
 
+//    print_r($errors);
+
         if(array_filter($errors)){
             //echo "There are errors in the form";
         }
@@ -94,13 +96,13 @@ $email = $ingredients = $title = '';
     <h4 class="center">Add a Pizza</h4>
     <form action="add.php" method="POST" class="white">
         <label for="">Your Email</label>               <!--  we must put id in for-->
-        <input type="text" name="email" value="<?php value($email, 'email'); ?>">
+        <input type="text" name="email" value="<?php isset($_POST['email']) ? value($_POST['email'], 'email') : $email; ?>">
         <div class="red-text"> <?php echo $errors['email'] ?? '';?> </div>
         <label for="">Pizza Title</label>
-        <input type="text" name="title" value="<?php value($title, 'title'); ?>">
+        <input type="text" name="title" value="<?php  isset($_POST['title']) ? value($_POST['title'], 'title') : $title; ?>">
         <div class="red-text"> <?php echo $errors['title'] ?? '';?> </div>
         <label for="">Ingredients (comma separated):</label>
-        <input type="text" name="ingredients" value="<?php value($ingredients, 'ingredients'); ?>">
+        <input type="text" name="ingredients" value="<?php isset($_POST['ingredients']) ? value($_POST['ingredients'], 'ingredients') : $ingredients; ?>">
         <div class="red-text"> <?php echo $errors['ingredients'] ?? '';?> </div>
         <div class="center">
             <input type="submit" name="submit" value="submit" class="btn brand z-depth-0">

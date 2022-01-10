@@ -54,7 +54,7 @@ $gender = $_COOKIE['gender'] ?? 'Unknown';
             <li class="grey-text">Hello <?php echo htmlspecialchars($name); ?>!</li>
             <li class="grey-text">(<?php echo $gender; ?>)</li>
             <li><a href="add.php" class="btn brand z-depth-0">ADD</a> </li>
-            <li><a href="#" class="btn brand z-depth-0">MASS DELETE</a> </li>
+            <li><a href="#" id="delete-product-btn" class="btn brand z-depth-0">MASS DELETE</a> </li>
             </ul>
         </div>
     </nav>
