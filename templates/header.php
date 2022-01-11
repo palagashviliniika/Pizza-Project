@@ -42,6 +42,15 @@ $gender = $_COOKIE['gender'] ?? 'Unknown';
             position: relative;
             top: -30px;
         }
+        .delete-checkbox{
+            background: black;
+        }
+        input[type="checkbox"]{
+            appearance: checkbox !important;
+        }
+        #delete-product-form{
+            max-width: 1800px;
+        }
     </style>
 
 </head>
@@ -54,7 +63,7 @@ $gender = $_COOKIE['gender'] ?? 'Unknown';
             <li class="grey-text">Hello <?php echo htmlspecialchars($name); ?>!</li>
             <li class="grey-text">(<?php echo $gender; ?>)</li>
             <li><a href="add.php" class="btn brand z-depth-0">ADD</a> </li>
-            <li><a href="#" id="delete-product-btn" class="btn brand z-depth-0">MASS DELETE</a> </li>
+            <li><button id="delete-product-btn" class="btn brand z-depth-0" form="delete-product-form" type="submit" value="Delete" name="delete-product-btn">MASS DELETE</button> </li>
             </ul>
         </div>
     </nav>

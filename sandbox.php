@@ -58,6 +58,7 @@ if(isset($_POST['submit'])){
         <option value="female">Female</option>
     </select>
     <input type="submit" name="submit" value="submit">
+    <input type="checkbox">
 </form>
 
 </body>
